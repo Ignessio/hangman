@@ -8,9 +8,9 @@ class ConsoleInterface
   # каждый файл становится элементом нового массива
   # для массива назначаем переменную константу, чтобы пересчитать файлы только 1 раз при запуске игры
   FIGURES =
-      Dir["#{__dir__}/../data/figures/*.txt"].
-      sort.
-      map { |file_name| File.read(file_name) }
+    Dir["#{__dir__}/../data/figures/*.txt"].
+    sort.
+    map { |file_name| File.read(file_name) }
 
   # назначаем экземпляру консоли экземпляр игры, чтобы исползьовать его методы
   def initialize(game)
@@ -34,8 +34,7 @@ class ConsoleInterface
   # возвращаем эту букву
   def get_input
     print "Введите следующую букву:"
-    letter = gets[0].upcase
-    return letter
+    gets[0].upcase
   end
 
   # выводим в консоль:
@@ -74,13 +73,13 @@ class ConsoleInterface
   def word_to_show
     result =
     @game.letters_to_guess.map do |letter|
-      if letter == nil
+      if letter.nil?
         "__"
       else
         letter
       end
     end
-    result.join(' ')
+    result.join(" ")
   end
 end
 

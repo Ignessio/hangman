@@ -10,10 +10,11 @@ end
 require_relative "lib/console_interface"
 require_relative "lib/game"
 
-puts "Всем привет!"
+puts "Приветствуем вас, игрок!"
+puts "Попробуйте угадать слово задавая по одной букве."
 
 # считываем случайную строку из файла и записываем её в переменную
-word = File.readlines("#{__dir__}/data/words.txt", chomp: true, encoding: 'utf-8').sample
+word = File.readlines("#{__dir__}/data/words.txt", chomp: true, encoding: "utf-8").sample
 
 # создаем новый экземпляр игры и передаем ему слово в строке
 game = Game.new(word)

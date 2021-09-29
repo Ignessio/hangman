@@ -65,13 +65,9 @@ class Game
   # иначе вернем nil
   # эта переменная будет использоваться для вывода слова с прочерками
   def letters_to_guess
-    result =
-      @letters.map do |letter|
-        if @user_guesses.include?(normalize_letter(letter))
-          letter
-        end
-      end
-    result
+    @letters.map do |letter|
+      letter if @user_guesses.include?(normalize_letter(letter))
+    end
   end
 
   # Возвращаем true, если у пользователя не осталось ошибок, т.е. игра проиграна
@@ -90,8 +86,9 @@ class Game
   # и если нормализованной буквы нет в массиве игрока
   # добавляем в массив игрока нормализованную букву
   def play!(letter)
-    if !over? && !@user_guesses.include?(normalize_letter(letter))
-      @user_guesses << normalize_letter(letter)
+    normalized_letter = normalize_letter(letter)
+    if !over? && !@user_guesses.include?(normalized_letter)
+      @user_guesses << normalized_letter
     end
   end
 
