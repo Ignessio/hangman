@@ -14,4 +14,4 @@ Run the program:
 
 
 How change words to guess:
-  To change word to guess please edit \date\words.txt file
+  To change word to guess please edit \data\words.txt file
