@@ -34,4 +34,8 @@
 
 # Usage
 
-  Load content to the local folder keeping intire structure. Run `ruby main.rb` in terminal window to start. To change word to guess please edit /data/words.txt file
+  Load content to the local folder keeping intire structure. Run
+  ```ruby
+  $ ruby main.rb
+  ```
+  in terminal window to start. To change word to guess please edit /data/words.txt file
