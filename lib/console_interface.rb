@@ -23,10 +23,10 @@ class ConsoleInterface
 
   def print_out
     puts <<~GAMESTATUS
-      Слово: #{word_to_show}
-      #{figure}
+      Слово: #{word_to_show.colorize(:light_blue)}
+      #{figure.colorize(:yellow)}
 
-      Ошибки (#{@game.errors_made}): #{errors_to_show}
+      Ошибки (#{@game.errors_made.to_s.colorize(:red)}): #{errors_to_show.colorize(:red)}
       У вас осталось ошибок: #{@game.errors_allowed}
 
       GAMESTATUS

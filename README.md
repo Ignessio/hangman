@@ -1,41 +1,57 @@
-# Description
+# Описание
 
-  The program outputs a greeting and shows the hidden letters in the random word, as well as the initial picture with the gallows.
-  The player must enter one letter at a step.
-  The letters that the player guesses are displayed in the hidden word.
-  Letters that are not in the word are displayed in the error list and new gallows pickture appears.
-  If the player has guessed all the letters, the game ends and the program congratulates the winner.
-  If the attempts are over, and the word is not opened, the player is considered as a looser.
+  Игра "виселица" использует простой консольный интерфейс. После запуска программы воводится приветствие строка с загаданным словом, которое выбирается случайным образом из списка подготовленных слов из файла 'data/words.txt' (вы можете изменить слова, отредактировав файл), картинка виселицы, а также количество ошибок и список введённых букв (сразу после запуска это поле пустое).
 
-  *Exapmle of the interface:*
+  На строке "Введите следующую букву:" игрок вводит любу букву русского алфавита в любом регистре.
+
+  После ввода буквы, которая есть в слове, интерфейс обновляется, показывая угаданные буквы и новые значение ошибок и введённых букв.
+  Если введённой буквы в слове нет, выводится картинка, на которой добавляется изображение висящего человечка, полностью отрисованное после 7 безуспешных попыток.
+
+  Если все буквы угаданы раньше, чем закончатся попытки, выводится поздравление с выигрышем.
+
+  *Пример графического изображения интерфейса:*
   ```
-  Слово: К О __ О __ __
-          _______
-          |/
-          |     ( )
-          |      |
-          |
-          |
-          |
-          |
-          |
-        __|________
-        |         |
+    Приветствуем вас, игрок!
+    Попробуйте угадать слово задавая по одной букве.
+    Слово: К О __ О __ __
+            _______
+            |/
+            |     ( )
+            |      |
+            |
+            |
+            |
+            |
+            |
+          __|________
+          |         |
 
-Ошибки (2): Х, У
-У вас осталось ошибок: 5
+  Ошибки (2): Х, У
+  У вас осталось ошибок: 5
 
-Введите следующую букву:
+  Введите следующую букву:
+  ```
+# Язык программирования
+
+  Ruby 3.0.2p107 (2021-07-07 revision 0db68f0233)
+
+# Библиотеки
+
+  В программе использована библиотека [colorize](https://github.com/fazibear/colorize#readme).
+
+# Запуск программы
+
+  Скачайте содержимое репозитория в локальную папку на компьютере, где устоновлен Ruby.
+  Запустите терминал с доступом к папке с программой.
+
+  Инициализируйте директорию для использования и устоновите библиотеку:
+  ```
+  bundler init
+  bundler install
   ```
 
-# Language
-
-  Ruby is used in program.
-
-# Usage
-
-  Load content to the local folder keeping intire structure. Run
+  Запустите программу:
   ```
-  $ ruby main.rb
+  bundle exec ruby main.rb
   ```
-  in terminal window to start. To change word to guess please edit /data/words.txt file
+  Для преждевременного завершения программы испльзуйте 'Ctrl + C'.
