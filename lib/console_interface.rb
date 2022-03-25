@@ -32,9 +32,9 @@ class ConsoleInterface
       GAMESTATUS
 
       if @game.won?
-      puts "Поздравляем, вы выиграли!"
+      puts "Поздравляем, вы выиграли!".colorize(:green)
     elsif @game.lost?
-      puts "Вы проиграли. Загаданное слово #{@game.word}."
+      puts "Вы проиграли. Загаданное слово #{@game.word}.".colorize(:red)
     end
   end
 

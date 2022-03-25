@@ -49,7 +49,7 @@ class Game
 
   def play!(letter)
     normalized_letter = normalize_letter(letter)
-    if !over? && !@user_guesses.include?(normalized_letter)
+    unless over? && @user_guesses.include?(normalized_letter)
       @user_guesses << normalized_letter
     end
   end
